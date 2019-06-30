@@ -3,6 +3,11 @@ import styled from 'styled-components';
 
 import TopSection from './Top-section';
 import ContentSection from './Content-section';
+import {
+  Router, 
+  Switch, 
+  Route, 
+  Redirect } from 'react-router-dom';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -18,13 +23,21 @@ const ContentWrapper = styled.div`
   margin: 0 auto;
 `;
 
+const Application = () => {
+  return (
+    <ContentWrapper>
+      <TopSection/>
+      <ContentSection />
+    </ContentWrapper>
+  )
+}
+
 const App = () => {
   return (
     <Wrapper>
-      <ContentWrapper>
-        <TopSection/>
-        <ContentSection />
-      </ContentWrapper>
+      <Switch>
+        <Route to={`${process.env.PUBLIC_URL}`} component={Application}/>
+      </Switch>
     </Wrapper>
   )
 }

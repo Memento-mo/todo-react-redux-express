@@ -9,9 +9,10 @@ mongoose.connect(keys.mongoURL, { useNewUrlParser: true });
 
 const app = express();
 
-require('./routes/taskRouter')(app);
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'client/build')));
+require('./routes/taskRouter')(app);
+
 
 // if (process.env.NODE_ENV === 'production') {
 //   app.use(express.static('client/build'));
