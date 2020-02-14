@@ -16,7 +16,7 @@
     "react-scripts": "2.1.8",
     "redux": "^4.0.1",
     "styled-components": "^4.2.0",
-    "yarn": "^1.15.2"
+    "yarn": "^1.22.0"
   },
   "scripts": {
     "start": "react-scripts start",
